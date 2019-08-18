@@ -1,0 +1,24 @@
+@Before
+    public void setUp() throws Exception {
+        start =  System.currentTimeMillis();
+
+        Robot r = new Robot();
+
+        Runtime.getRuntime().exec("C:\\Users\\qwert\\AppData\\Local\\Programs\\scatter\\scatter.exe use");
+        TimeUnit.SECONDS.sleep(10);
+
+        String text = "etsbdr24546564wt3";
+        StringSelection stringSelection = new StringSelection(text);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, stringSelection);
+
+        r.keyPress(KeyEvent.VK_CONTROL);
+        r.keyPress(KeyEvent.VK_V);
+
+        r.keyRelease(KeyEvent.VK_V);
+        r.keyRelease(KeyEvent.VK_CONTROL);
+
+        TimeUnit.SECONDS.sleep(2);
+        r.keyPress(KeyEvent.VK_ENTER);
+        r.keyRelease(KeyEvent.VK_ENTER);
+        TimeUnit.SECONDS.sleep(20);
