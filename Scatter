@@ -4,10 +4,10 @@
 
         Robot r = new Robot();
 
-        Runtime.getRuntime().exec("path");
+        Runtime.getRuntime().exec("path");//path 
         TimeUnit.SECONDS.sleep(10);
 
-        String text = "etsbdr24546564wt3";
+        String text = "password";
         StringSelection stringSelection = new StringSelection(text);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, stringSelection);
