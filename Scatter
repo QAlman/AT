@@ -4,7 +4,7 @@
 
         Robot r = new Robot();
 
-        Runtime.getRuntime().exec("C:\\Users\\qwert\\AppData\\Local\\Programs\\scatter\\scatter.exe use");
+        Runtime.getRuntime().exec("path");
         TimeUnit.SECONDS.sleep(10);
 
         String text = "etsbdr24546564wt3";
