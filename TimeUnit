@@ -1,0 +1,25 @@
+
+    @Before
+    public void setUp() throws Exception {
+
+        start = System.currentTimeMillis();
+        DesiredCapabilities capabillities = DesiredCapabilities.chrome();
+        driver = new RemoteWebDriver(new URL("http://163.172.108.115:4444/wd/hub"), capabillities);
+        baseUrl = "https://kovan.nitrogen.network/fundingbook/orders/lend";
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    }
+
+    public void ty() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(2);
+
+    }
+    int i=1;
+    public void so() {
+
+        System.out.println("Unit test number " + "  "+(i++)+ " "+ " passed");
+    }
+
+
+        @Test
+        public void testUntitQAlman() throws Exception {
