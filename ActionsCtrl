@@ -1,0 +1,16 @@
+        driver.get(driver.getCurrentUrl());
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Unit test number " + "  "+(i++)+ " "+ " passed");
+
+        Actions action = new Actions(driver);
+        action.keyDown(Keys.CONTROL).sendKeys(Keys.CONTROL,Keys.F5).perform();
+        TimeUnit.SECONDS.sleep(1);
+        System.out.println("Unit test number " + "  "+(i++)+ " "+ " passed");
+
+        driver.navigate().refresh();
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Unit test number " + "  "+(i++)+ " "+ " passed");
+
+        driver.findElement(By.className("useDesktopBanner__btn--Pcha")).click();
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Unit test number " + "  "+(i++)+ " "+ " passed");
