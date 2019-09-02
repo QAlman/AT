@@ -1,0 +1,163 @@
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+public class ChaniseTEST {
+
+    private WebDriver driver;
+    private String baseUrl;
+    private boolean acceptNextAlert = true;
+    private StringBuffer verificationErrors = new StringBuffer();
+
+    @Before
+    public void setUp() throws Exception {
+
+    
+
+        DesiredCapabilities capabillities = DesiredCapabilities.chrome();
+
+
+        driver = new RemoteWebDriver(new URL("http://admin:......@......9:4444/wd/hub"),capabillities);
+        baseUrl = "https://eosdt.com/";
+
+
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+
+
+    }
+
+    @Test
+    public void testUntitChaniseTESTB24052019() throws Exception {
+
+        driver.get(baseUrl);
+        TimeUnit.SECONDS.sleep(2);
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='EOSDT'])[1]/preceding::img[1]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        driver.findElement(By.linkText("Generate EOSDT")).click();
+        TimeUnit.SECONDS.sleep(2);
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='EN'])[1]/following::div[2]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        driver.findElement(By.xpath("//div[@id='app']/div/div[2]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String body = driver.findElement(By.tagName("body")).getText();
+        String gatchi1 = "EN\n" +
+                "中文\n" +
+                "自助网关\n" +
+                "基于 EOS 的 DApp 生成 EOSDT 稳定币和 管理现有用户的仓位\n" +
+                "利用您资产的杠杆效应\n" +
+                "您可以通过抵押 EOS 或其他数字资产来生成 EOSDT 稳定币，直到偿还完这部分生成的 EOSDT\n" +
+                "通过桌面版的 Scatter\n" +
+                "通过选择以下其中一个钱包进行链接\n" +
+                "下载钱包";
+
+        if (body.equals(gatchi1)) {
+            System.out.println("At first glance this might look like a excellent result");
+            TimeUnit.SECONDS.sleep(2);
+        } else {
+
+            System.out.println(gatchi1 + "\n" +" ---------------------- " + " original " + "\n" + body);
+            driver.quit();
+
+        }
+
+
+
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='EN'])[1]/preceding::span[1]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='中文'])[1]/following::div[1]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String body1 = driver.findElement(By.tagName("body")).getText();
+        String gatchi2 ="EN\n" +
+                "中文\n" +
+                "主页\n" +
+                "EOSDT\n" +
+                "稳定性\n" +
+                "治理\n" +
+                "说明\n" +
+                "博客\n" +
+                "常见问题\n" +
+                "关于我们\n" +
+                "加入我们的电报群\n" +
+                "自助网关\n" +
+                "基于 EOS 的 DApp 生成 EOSDT 稳定币和 管理现有用户的仓位\n" +
+                "利用您资产的杠杆效应\n" +
+                "您可以通过抵押 EOS 或其他数字资产来生成 EOSDT 稳定币，直到偿还完这部分生成的 EOSDT\n" +
+                "通过桌面版的 Scatter\n" +
+                "通过选择以下其中一个钱包进行链接\n" +
+                "下载钱包";
+
+        if (body1.equals(gatchi2)) {
+            System.out.println("At first glance this might look like a excellent result too");
+            TimeUnit.SECONDS.sleep(2);
+        } else {
+
+
+            System.out.println(gatchi2 + "\n" +" ---------------------- " + " original " + "\n" + body1);
+            driver.quit();
+
+        }
+
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='EN'])[1]/preceding::button[1]")).click();
+        TimeUnit.SECONDS.sleep(2);
+
+
+    }
+
+
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+        String verificationErrorString = verificationErrors.toString();
+        if (!"".equals(verificationErrorString)) {
+            fail(verificationErrorString);
+        }
+    }
+
+    private boolean isElementPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    private boolean isAlertPresent() {
+        try {
+            driver.switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
+    private String closeAlertAndGetItsText() {
+        try {
+            Alert alert = driver.switchTo().alert();
+            String alertText = alert.getText();
+            if (acceptNextAlert) {
+                alert.accept();
+            } else {
+                alert.dismiss();
+            }
+            return alertText;
+        } finally {
+            acceptNextAlert = true;
+        }
+    }
+
+
+
+}
