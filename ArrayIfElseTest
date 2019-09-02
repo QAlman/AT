@@ -1,0 +1,421 @@
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.URI;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.fail;
+
+public class ArrayIfElseTest {
+
+    long  start = System.currentTimeMillis();
+    private WebDriver driver;
+    private String baseUrl;
+    private boolean acceptNextAlert = true;
+    private StringBuffer verificationErrors = new StringBuffer();
+
+
+    @Before
+    public void setUp() throws Exception {
+        start =  System.currentTimeMillis();
+
+
+     
+
+
+        ChromeOptions options = new ChromeOptions();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        capabilities.setBrowserName("chrome");
+        capabilities.setVersion("");
+        capabilities.setCapability("enableVNC", true);
+        driver = new RemoteWebDriver(new URL("http://........:4444/wd/hub"),capabilities);
+        baseUrl = "https://eosdt.com/";
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+ 
+
+    }
+
+    @Test
+    public void testUntitFAQ30052019() throws Exception {
+        int i=1;
+
+        driver.get(baseUrl);
+        TimeUnit.SECONDS.sleep(2);
+
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Generate EOSDT'])[1]/following::button[1]")).click();
+        TimeUnit.SECONDS.sleep(2);
+
+
+        driver.findElement(By.linkText("FAQ")).click();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Join us on Telegram'])[2]/following::div[5]")).click();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'How does EOSDT work?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq2 = driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='How does EOSDT work?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'How do I obtain EOSDT?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq3= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='How do I obtain EOSDT?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'What keeps EOSDT prices stable?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq4= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='What keeps EOSDT prices stable?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'What can I use EOSDT for?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq5= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='What can I use EOSDT for?'])[1]/following::p[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'How much does it cost to use EOSDT?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq6= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='How much does it cost to use EOSDT?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'Why the need for overcollaterization?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq7= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Why the need for overcollaterization?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'How is my collateral secured?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq8= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='How is my collateral secured?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'How do I access the platform?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq9= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='How do I access the platform?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'How do I connect to your API?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq10= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='How do I connect to your API?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'Which crypto wallets are compatible with Equilibrium?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq11= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Which crypto wallets are compatible with Equilibrium?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'How do I generate EOSDT?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq12= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='How do I generate EOSDT?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'How do I pay back EOSDT?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq13= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='How do I pay back EOSDT?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'What fees are associated with using EOSDT?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq14= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='What fees are associated with using EOSDT?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'What happens when the collateralization level on my position falls below the critical level?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq15= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='What happens when the collateralization level on my position falls below the critical level?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'Who are the arbitrators?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq16= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Who are the arbitrators?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'How do you use the liquidation penalties you acquire?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq17= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='How do you use the liquidation penalties you acquire?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'Why make another stablecoin?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq18= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Why make another stablecoin?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'How does EOSDT compare to other stablecoin projects?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq19= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='How does EOSDT compare to other stablecoin projects?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'Why use the EOS blockchain?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq20= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Why use the EOS blockchain?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'Why do I need to create EOSDT if I can buy it on the secondary market?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq21= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Why do I need to create EOSDT if I can buy it on the secondary market?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'Is the smart contract code publicly available?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq22= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Is the smart contract code publicly available?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+
+        driver.findElement(By.xpath("//*[contains(text(), 'Who’s on the team?')]")).click();
+        TimeUnit.SECONDS.sleep(2);
+        String fq23= driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Who’s on the team?'])[1]/following::div[1]")).getText();
+        TimeUnit.SECONDS.sleep(2);
+
+
+        driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Subscribe to our updates'])[1]/following::button[1]")).click();
+        TimeUnit.SECONDS.sleep(2);
+
+
+
+        ArrayList <String>  arfq = new ArrayList<String>();
+
+       
+        arfq.add(fq2);
+        arfq.add(fq3);
+        arfq.add(fq4);
+        arfq.add(fq5);
+        arfq.add(fq6);
+        arfq.add(fq7);
+        arfq.add(fq8);
+        arfq.add(fq9);
+        arfq.add(fq10);
+        arfq.add(fq11);
+        arfq.add(fq12);
+        arfq.add(fq13);
+        arfq.add(fq14);
+        arfq.add(fq15);
+        arfq.add(fq16);
+        arfq.add(fq17);
+        arfq.add(fq18);
+        arfq.add(fq19);
+        arfq.add(fq20);
+        arfq.add(fq21);
+        arfq.add(fq22);
+        arfq.add(fq23);
+
+
+
+        String fqee ="[Each EOSDT stablecoin is backed by digital assets stored by a secure Equilibrium smart contract. Anyone may lock their digital assets there as collateral and issue EOSDT against it., Use the self-service gateway at https://gateway.eosdt.com to deposit your collateral and generate the desired amount EOSDT against it. You may also buy EOSDT from various exchanges that list it., Equilibrium incentivizes third-party participants, known as arbitrators, to maintain EOSDT’s USD peg. Arbitrators are automated programs that search for arbitrage opportunities when EOSDT’s price deviates from the peg. They also participate in liquidation auctions to ensure timely management of liquidated debt and collateral., EOSDT is stable cryptocurrency with a predictable price and low volatility versus its peers, so it’s suitable for a wide range of financial activities. For example:, Users may currently lend themselves EOSDT at an APR as low as 1%, payable in NUT tokens at the time of loan repayment., To make sure that new EOSDT cryptocurrency won’t be subject to collateral runs or speculative attacks, we must maintain a collateral backing of at least 100%. The 170% figure comes from analyzing current levels of collateral volatility., Your collateral is held in an EOS-based smart contract. The contract has been inspected for security by independent third-party auditors. No users or other contracts have access to your funds., The Equilibrium framework’s self-service gateway is located at https://gateway.eosdt.com. You will need Scatter Desktop Wallet to manage your accounts and connect to the EOS blockchain. If you’d rather connect to the jungle test network, please see this post on how to change Scatter connection settings. Mobile users should use Lynx Wallet to connect to the framework., You may use our EOS.js library to communicate directly with Equilibrium’s contract bundle. Please see our github for details on library implementation., The Equilibrium framework currently supports Scatter for desktop and EOS Lynx for mobile devices., To generate EOSDT, a user needs to provide EOS collateral. With a current collateralization level of 170% for every $1.7 USD of collateral supplied, users may generate 1 EOSDT. EOSDT generation is possible through desktop and mobile interfaces located at https://gateway.eosdt.com, Simple — just use https://gateway.eosdt.com to return your EOSDT on payback button. Make sure you have sufficient NUT holdings to cover any admin fees., There are three types of fees in the EOSDT ecosystem. First is the equilibrium fee, which is basically an interest rate on your EOSDT holdings. This fee accrues continuously and is due when you pay back your EOSDT. This fee is currently set to 0%. The second one is the admin fee, which is payable in NUT tokens when users pay back their EOSDT. This fee depends on the fraction of the total EOSDT paid back on a position, and it permanently reduces the NUT token supply. The admin fee is set to 1% APR at launch. The third fee is the transaction fee, which is payable each time users make EOSDT transfers. This fee is currently set to 0%. Both transaction fee and Equilibrium fee may be changed via the governance process, unlike equilibrium fee due to the possible conflict of interest with NUT holders., This means your position has become undercollateralized, so it will become margin callable. This means that anyone may liquidate your position, reducing the position’s EOSDT debt to zero and transferring enough collateral to the liquidator to cover all the EOSDT you owe, plus a 20% penalty., The liquidator contract’s design lets Equilibrium users compete for arbitrage opportunities. We call these economic agents ”arbitrators”. The liquidator contract constantly offers liquidated EOSDT and collateral for sale. An arbitrator bot can margin call risky positions and buy their bad EOSDT or collateral from the contract. Any user may run the bot to compete against other users, and they’ll be buying surplus EOSDT and/or liquidated collateral at an incentivizing liquidation discount of 5% off the current oracle price., After there is no bad debt left on the liquidator contract, all the excess collateral to the collateral pool. It gets evenly distributed among all of Equilibrium’s collateral holders, giving them more EOS every time a margin call happens., Our stablecoin is backed by crypto assets, ironing out the volatility inherent in so many other cryptocurrencies. EOSDT is pegged to the US dollar, so it serves as a strong store of value in times of market downturn. Because one EOSDT always equals one US dollar, it also works as an intuitive means of transaction., Equilibrium is unique because it's the first collateral-backed, dollar-pegged stablecoin built on EOS technology. This enables fast transaction times, zero network fees, native governance features, and provides room for scaling and reinforcing the EOS infrastructure., Other blockchains are crowded. By using EOS, we ensure that our algorithms are speedy and efficient. Introducing software updates on EOS does not require central control and weird workarounds that are common with Ethereum, for example., As an end user or trader, you would probably buy EOSDT on an exchange for your own speculative interest. This doesn’t mean you can’t lend yourself EOSDT via Equilibrium., Yes, please see our github repository., Please see the about us section of our website, where we introduce our team members.]";
+       
+
+
+        if (arfq.toString().equals(fqee)) {
+
+            System.out.println("muy bien");
+            TimeUnit.SECONDS.sleep(2);
+
+        }
+
+        else {
+            System.out.println(arfq.toString() + "\n" +" ---------------------- " + "\n"+ "original" +"\n"+ fqee);
+            driver.quit();
+        }
+
+
+
+        String fq = driver.findElement(By.tagName("body")).getText();
+        String fqe = "eosdt\n" +
+                "stability\n" +
+                "governance\n" +
+                "about us\n" +
+                "blog\n" +
+                "EN\n" +
+                "中文\n" +
+                "Generate EOSDT\n" +
+                "Join us on Telegram\n" +
+                "EOSDT stablecoins\n" +
+                "How does EOSDT work?\n" +
+                "How do I obtain EOSDT?\n" +
+                "What keeps EOSDT prices stable?\n" +
+                "What can I use EOSDT for?\n" +
+                "How much does it cost to use EOSDT?\n" +
+                "Why the need for overcollaterization?\n" +
+                "How is my collateral secured?\n" +
+                "Gateway questions\n" +
+                "How do I access the platform?\n" +
+                "How do I connect to your API?\n" +
+                "Which crypto wallets are compatible with Equilibrium?\n" +
+                "How do I generate EOSDT?\n" +
+                "How do I pay back EOSDT?\n" +
+                "What fees are associated with using EOSDT?\n" +
+                "Liquidation questions\n" +
+                "What happens when the collateralization level on my position falls below the critical level?\n" +
+                "Who are the arbitrators?\n" +
+                "How do you use the liquidation penalties you acquire?\n" +
+                "General questions\n" +
+                "Why make another stablecoin?\n" +
+                "How does EOSDT compare to other stablecoin projects?\n" +
+                "Why use the EOS blockchain?\n" +
+                "Why do I need to create EOSDT if I can buy it on the secondary market?\n" +
+                "Is the smart contract code publicly available?\n" +
+                "Who’s on the team?\n" +
+                "Please see the about us section of our website, where we introduce our team members.\n" +
+                "Subscribe to our updates\n" +
+                "Subscribe\n" +
+                "Enter a valid address\n" +
+                "Contacts us\n" +
+                "GitHub\n" +
+                "Telegram\n" +
+                "Reddit\n" +
+                "Medium\n" +
+                "Facebook\n" +
+                "Twitter\n" +
+                "Generate EOSDT\n" +
+                "Specification\n" +
+                "Privacy policy\n" +
+                "Terms of use\n" +
+                "About us\n" +
+                "Blog\n" +
+                "Contacts\n" +
+                "The Equilibrium framework is a software service with a consensus based governance system. EOSDT and Native Utility Token (NUT) are not a security or a regulated instrument. The use of this site and the Equilibrium self-service gateway is subject to Terms and Conditions, by accessing this site you agree to these Terms.\n" +
+                "© 2019 Equilibrium";
+
+        if (fq.equals(fqe)) {
+
+            System.out.println("muy bien dos");
+            TimeUnit.SECONDS.sleep(2);
+
+        }
+
+        else {
+            System.out.println(fq + "\n" +" ---------------------- "  + "\n"+ "original body" + "\n" + fqe);
+            driver.quit();
+        }
+
+        TimeUnit.SECONDS.sleep(2);
+
+        driver.close();
+
+
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        System.out.println("Test proceed = " + " " + (System.currentTimeMillis() - start)+ " "+" ms");
+
+        driver.quit();
+        String verificationErrorString = verificationErrors.toString();
+        if (!"".equals(verificationErrorString)) {
+            fail(verificationErrorString);
+        }
+    }
+
+    private boolean isElementPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    private boolean isAlertPresent() {
+        try {
+            driver.switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
+    private String closeAlertAndGetItsText() {
+        try {
+            Alert alert = driver.switchTo().alert();
+            String alertText = alert.getText();
+            if (acceptNextAlert) {
+                alert.accept();
+            } else {
+                alert.dismiss();
+            }
+            return alertText;
+        } finally {
+            acceptNextAlert = true;
+        }
+    }
+
+
+    public void run() {
+    }
+
+    public void start() {
+    }
+
+}
