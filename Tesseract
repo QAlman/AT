@@ -1,42 +1,253 @@
+
 import java.awt.*;
 import java.awt.color.ColorSpace;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorConvertOp;
 import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
-//import.net.Imageij;
-import ij.IJ;
-import ij.ImagePlus;
-import ij.process.ImageProcessor;
+import java.util.regex.Pattern;
+import java.util.concurrent.TimeUnit;
+
+
+import marvin.image.MarvinImage;
+import marvin.io.MarvinImageIO;
+import marvinplugins.MarvinPluginCollection;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
+import org.apache.commons.io.FileUtils;
+import org.junit.*;
+import static org.junit.Assert.*;
+import static org.openqa.selenium.Keys.CONTROL;
+import static org.openqa.selenium.Keys.RETURN;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import javax.imageio.ImageIO;
 
-public class Tesseract_2 {
-    public static void main(String[] args) throws IOException {
+
+
+public class Procter_1{
+
+    long  start = System.currentTimeMillis();
+    private WebDriver driver;
+    private java.lang.String baseUrl;
+    private boolean acceptNextAlert = true;
+    private StringBuffer verificationErrors = new StringBuffer();
 
 
 
-    Tesseract tesseract = new Tesseract();
+
+
+    @Before
+    public void setUp() throws Exception {
+
+        start =  System.currentTimeMillis();
+        driver = new ChromeDriver(); 
+        baseUrl = "https://pgbonus.ru/auth";
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+
+
+    }
+
+    @Test
+    public void testUntitledTestCase11() throws Exception {
+       
+        driver.get(baseUrl);
+        TimeUnit.SECONDS.sleep(1);
+      
+        driver.manage().window().setPosition(new Point(0, 0));
+        driver.manage().window().setSize(new Dimension(125, 200));
+
+        driver.get("https://pgbonus.ru/site/captcha");
+        TimeUnit.SECONDS.sleep(1);
+
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File("D:/Tess4J/tessdata/1/captcha.png"));
+        TimeUnit.SECONDS.sleep(1);
+
+    /*
+            MarvinImage image = MarvinImageIO.loadImage("D:/Tess4J/tessdata/1/captcha4.png");
+            MarvinPluginCollection.crop(image.clone(), image, 190, 9, 120, 50);
+            MarvinImageIO.saveImage(image, "D:/Tess4J/tessdata/1/captcha8.png");
+
+    */
+
+
+/*
+
+        WebElement logo = driver.findElement(By.cssSelector("body > img"));
+        String logoSRC = logo.getAttribute("src");
+
+        URL imageURL = new URL(logoSRC);
+        BufferedImage saveImage = ImageIO.read(imageURL);
+
+        ImageIO.write(saveImage, "png", new File("D:/Tess4J/tessdata/1/captcha3.png"));
+
+        TimeUnit.SECONDS.sleep(1);
+
+ */
+
+
+        driver.manage().window().maximize();
+        driver.get(baseUrl);
+        TimeUnit.SECONDS.sleep(1);
+
+        driver.findElement(By.id("loginform-email")).click();
+        TimeUnit.SECONDS.sleep(1);
+        driver.findElement(By.id("loginform-email")).click();
+        TimeUnit.SECONDS.sleep(1);
+        driver.findElement(By.id("loginform-email")).clear();
+        TimeUnit.SECONDS.sleep(1);
+        driver.findElement(By.id("loginform-email")).sendKeys("0000000044@mail.ru");
+        TimeUnit.SECONDS.sleep(1);
+        driver.findElement(By.id("password")).click();
+        TimeUnit.SECONDS.sleep(1);
+        driver.findElement(By.id("password")).clear();
+        TimeUnit.SECONDS.sleep(1);
+        driver.findElement(By.id("password")).sendKeys("Qwerty123");
+        TimeUnit.SECONDS.sleep(1);
+        driver.findElement(By.xpath("//form[@id='login-form']/div[3]/div/label/span")).click();
+        TimeUnit.SECONDS.sleep(1);
+
+
+
+          //  File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+          //  Now you can do whatever you need to do with it, for example copy somewhere
+          //  FileUtils.copyFile(scrFile, new File("D:/Tess4J/tessdata/1/captcha3.png"));
+
+
+
+
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+          //  URL url = new URL("D:/Tess4J/tessdata/1/captcha3.png");
+
+
+            BufferedImage image4 = ImageIO.read(new File("D:/Tess4J/tessdata/1/captcha.png"));
+            BufferedImage image2 = image4.getSubimage( 190, 9, 120, 50);
+
+            ImageIO.write(image2, "png", new File("D:/Tess4J/tessdata/1/captcha1.png"));
+            TimeUnit.SECONDS.sleep(1);
+
+
+            BufferedImage bImage1;
+            bImage1 = ImageIO.read(new File("D:/Tess4J/tessdata/1/captcha1.png"));
+            TimeUnit.SECONDS.sleep(1);
+            ColorSpace cs = ColorSpace.getInstance(ColorSpace.CS_GRAY);
+            ColorConvertOp op = new ColorConvertOp(cs, null);
+            BufferedImage bImage = op.filter(bImage1, null);
+
+            int w = bImage.getWidth();
+            int h = bImage.getHeight();
+
+            BufferedImage scaledImage = new BufferedImage((w * 5), (h * 5), BufferedImage.TYPE_INT_ARGB);
+            AffineTransform at = AffineTransform.getScaleInstance(5.0, 5.0);
+            AffineTransformOp ato = new AffineTransformOp(at, AffineTransformOp.TYPE_BICUBIC);
+            scaledImage = ato.filter(bImage, scaledImage);
+
+            ImageIO.write(scaledImage, "png", new File("D:/Tess4J/tessdata/1/11_1.png"));
+
+            System.out.println("Resize and crop was done ");
+
+        } catch (IOException e) {
+            System.out.println("Exception occured :" + e.getMessage());
+        }
+
+        TimeUnit.SECONDS.sleep(1);
+
+        Tesseract tesseract1 = new Tesseract();
+
         try {
 
+            tesseract1.setDatapath("D:/Tess4J/tessdata");
+
+            String CAPT  = null;
+
+            CAPT = tesseract1.doOCR(new File("D:/Tess4J/tessdata/1/11_1.png"));
+
+            TimeUnit.SECONDS.sleep(1);
+            System.out.print(CAPT);
+
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.id("loginform-captcha")).clear();
+            TimeUnit.SECONDS.sleep(1);
+            // driver.findElement(By.id("loginform-captcha")).sendKeys("07484");
+            driver.findElement(By.id("loginform-captcha")).sendKeys(CAPT);
+            TimeUnit.SECONDS.sleep(1);
 
 
-        tesseract.setDatapath("C:/Tess4J/tessdata");
+            driver.findElement(By.xpath("//form[@id='login-form']/div[4]/button/i")).click();
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[4]/img")).click();
+            TimeUnit.SECONDS.sleep(1);
 
-        // the path of your tess data folder 
-        // inside the extracted file 
-        String text
-                = tesseract.doOCR(new File("C:/Tess4J/tessdata/4_3.png")); //tesseract.doOCR(new File("C:/Tess4J/tessdata/image.jpg"));
 
-        // path of your image file 
-        System.out.print(text);
-    } catch (
-    TesseractException e) {
-        e.printStackTrace();
+        } catch (TesseractException e) {
+            e.printStackTrace();
+
+
+        }
+
+        TimeUnit.SECONDS.sleep(2);
+
+        driver.close();
+
+
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        driver.quit();
+        String verificationErrorString = verificationErrors.toString();
+        if (!"".equals(verificationErrorString)) {
+            fail(verificationErrorString);
+        }
+    }
+
+    private boolean isElementPresent(By by) {
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    private boolean isAlertPresent() {
+        try {
+            driver.switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
+
+    private String closeAlertAndGetItsText() {
+        try {
+            Alert alert = driver.switchTo().alert();
+            String alertText = alert.getText();
+            if (acceptNextAlert) {
+                alert.accept();
+            } else {
+                alert.dismiss();
+            }
+            return alertText;
+        } finally {
+            acceptNextAlert = true;
+        }
     }
 }
-}
+
+
+
+
